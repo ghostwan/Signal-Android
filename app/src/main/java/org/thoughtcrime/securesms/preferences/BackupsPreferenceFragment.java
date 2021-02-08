@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 
+import com.ghostwan.plugin.GhostwanBackup;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -74,6 +76,7 @@ public class BackupsPreferenceFragment extends Fragment {
     toggle.setOnClickListener(unused -> onToggleClicked());
     create.setOnClickListener(unused -> onCreateClicked());
     verify.setOnClickListener(unused -> BackupDialog.showVerifyBackupPassphraseDialog(requireContext()));
+    GhostwanBackup.INSTANCE.init(getContext(), view); //ghostwan
 
     EventBus.getDefault().register(this);
   }
@@ -92,6 +95,7 @@ public class BackupsPreferenceFragment extends Fragment {
   @Override
   public void onDestroyView() {
     super.onDestroyView();
+    GhostwanBackup.INSTANCE.destroy(); //ghostwan
     EventBus.getDefault().unregister(this);
   }
 
@@ -242,6 +246,7 @@ public class BackupsPreferenceFragment extends Fragment {
     toggle.setText(R.string.BackupsPreferenceFragment__turn_off);
     create.setVisibility(View.VISIBLE);
     verify.setVisibility(View.VISIBLE);
+    GhostwanBackup.INSTANCE.visible(); //ghostwan
     setBackupFolderName();
   }
 
@@ -250,5 +255,6 @@ public class BackupsPreferenceFragment extends Fragment {
     create.setVisibility(View.GONE);
     folder.setVisibility(View.GONE);
     verify.setVisibility(View.GONE);
+    GhostwanBackup.INSTANCE.gone(); //ghostwan
   }
 }

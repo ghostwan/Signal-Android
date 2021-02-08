@@ -146,6 +146,38 @@
                 android:textColor="@color/signal_text_secondary" />
         </LinearLayout>
 
+        <!-- //ghostwan begin-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeightLarge"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:tag="fragment_backup_cloud_layout"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:tag="fragment_backup_cloud_connect_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/preference_backups_cloud"
+                android:textAppearance="@style/Signal.Text.Body"
+                android:textColor="@color/signal_text_primary" />
+
+            <TextView
+                android:tag="fragment_backup_cloud_description_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/preference_backup_cloud_description"
+                android:textAppearance="@style/Signal.Text.Preview"
+                android:textColor="@color/signal_text_secondary" />
+        </LinearLayout>
+        <!-- //ghostwan end-->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/fragment_backup_toggle"
             android:layout_width="wrap_content"

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="preference_backups_cloud">Connect to cloud storage</string>
+	<string name="preference_backup_cloud_description">Backup your conversation online, providers supported:
+		Google Drive</string>
+</resources>
