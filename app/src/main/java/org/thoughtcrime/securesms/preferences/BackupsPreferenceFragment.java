@@ -76,7 +76,7 @@ public class BackupsPreferenceFragment extends Fragment {
     toggle.setOnClickListener(unused -> onToggleClicked());
     create.setOnClickListener(unused -> onCreateClicked());
     verify.setOnClickListener(unused -> BackupDialog.showVerifyBackupPassphraseDialog(requireContext()));
-    GhostwanBackup.INSTANCE.init(getContext(), view); //ghostwan
+    GhostwanBackup.INSTANCE.init(getContext(), view, this); //ghostwan
 
     EventBus.getDefault().register(this);
   }

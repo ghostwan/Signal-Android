@@ -5,6 +5,8 @@ import android.Manifest;
 
 import androidx.annotation.NonNull;
 
+import com.ghostwan.plugin.GhostwanBackup;
+
 import org.signal.core.util.logging.Log;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.backup.BackupFileIOError;
@@ -121,6 +123,7 @@ public final class LocalBackupJob extends BaseJob {
           Log.w(TAG, "Failed to rename temp file");
           throw new IOException("Renaming temporary backup file failed!");
         }
+//        GhostwanBackup.INSTANCE.uploadBackup(backupFile);
       } catch (IOException e) {
         BackupFileIOError.postNotificationForException(context, e, getRunAttempt());
         throw e;
